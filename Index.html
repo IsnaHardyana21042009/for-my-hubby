@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Husband❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #ffc0cb, #ffe4e1, #ffb6c1);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+    color: #a83250;
+}
+
+.container {
+    background: rgba(255,255,255,0.85);
+    padding: 35px 25px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 35px rgba(180,50,80,0.2);
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 15px 0;
+}
+
+.heart {
+    font-size: 65px;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.2); }
+}
+
+button {
+    background: #ff5c8a;
+    border: none;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e83e70;
+    transform: scale(1.05);
+}
+
+#pesan {
+    display: none;
+    margin-top: 25px;
+    animation: muncul 1s;
+}
+
+@keyframes muncul {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.floating {
+    position: fixed;
+    bottom: -30px;
+    font-size: 25px;
+    animation: terbang 6s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes terbang {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.footer {
+    font-size: 13px;
+    margin-top: 25px;
+    color: #cc6680;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="heart">❤️</div>
+
+    <h1>Sayangku, Suamiku</h1>
+
+    <p>
+        Aku pengen ngomong sesatu nih hehe.
+    </p>
+
+    <button onclick="bukaPesan()">
+        Klik di sini 💌
+    </button>
+
+    <div id="pesan">
+        <h2>Untuk Suamiku ❤️</h2>
+
+        <p>
+            Terima kasih sudah hadir dalam hidup aku.
+            Terima kasih sudah menjadi bagian dari
+            hari-hari aku.
+        </p>
+
+        <p>
+            Aku mungkin bukan orang yang sempurna,
+            tapi aku akan selalu berusaha menjadi
+            yang terbaik buat kamu.
+        </p>
+
+        <p>
+            Jangan pernah bosan sama aku ya?
+            Aku mau kita terus bersama, kalau ada masalah kita selesaikan bareng
+            Kalau mau curhat, aku di sini buat mendengarkan. 
+        </p>
+            <h2>I LOVE YOU SUAMIKU :3 💗</h2>
+
+        <div class="heart">💗</div>
+    </div>
+
+    <div class="footer">
+        Made with love, just for you ♡
+    </div>
+
+</div>
+
+<script>
+function bukaPesan() {
+    document.getElementById("pesan").style.display = "block";
+}
+
+// Animasi hati berjatuhan
+function buatHati() {
+    const hati = document.createElement("div");
+    hati.classList.add("floating");
+    hati.innerHTML = ["❤️", "💕", "💗", "💖", "💘"][
+        Math.floor(Math.random() * 5)
+    ];
+
+    hati.style.left = Math.random() * 100 + "vw";
+    hati.style.animationDuration = (Math.random() * 3 + 4) + "s";
+
+    document.body.appendChild(hati);
+
+    setTimeout(() => {
+        hati.remove();
+    }, 7000);
+}
+
+setInterval(buatHati, 500);
+</script>
+
+</body>
+</html>
